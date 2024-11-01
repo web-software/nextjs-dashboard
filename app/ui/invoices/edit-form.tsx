@@ -168,7 +168,7 @@ export default function EditInvoiceForm({ invoice, customers }: { invoice: Invoi
           aria-atomic="true"
         >
           {state.errors && Object.values(state.errors).some((value) => value && value.length > 0) && (
-            <p className="mt-2 text-sm text-red-500">Missing fields. Failed to create.</p>
+            <p className="mt-2 text-sm text-red-500">Missing fields. Failed to update.</p>
           )}
         </div>
       </div>
