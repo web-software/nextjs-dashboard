@@ -1,8 +1,7 @@
-import { generateYAxis } from '@/app/lib/utils';
-import { CalendarIcon } from '@heroicons/react/24/outline';
-import { lusitana } from '@/app/ui/fonts';
-import { Revenue } from '@/app/lib/definitions';
 import { fetchRevenue } from '@/app/lib/data';
+import { generateYAxis } from '@/app/lib/utils';
+import { lusitana } from '@/app/ui/fonts';
+import { CalendarIcon } from '@heroicons/react/24/outline';
 
 // This component is representational only.
 // For data visualization UI, check out:
@@ -22,9 +21,7 @@ export default async function RevenueChart() {
 
   return (
     <div className="w-full md:col-span-4">
-      <h2 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
-        Recent Revenue
-      </h2>
+      <h2 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>Recent Revenue</h2>
       {/* NOTE: Uncomment this code in Chapter 7 */}
 
       <div className="rounded-xl bg-gray-50 p-4">
@@ -39,16 +36,17 @@ export default async function RevenueChart() {
           </div>
 
           {revenue.map((month) => (
-            <div key={month.month} className="flex flex-col items-center gap-2">
+            <div
+              key={month.month}
+              className="flex flex-col items-center gap-2"
+            >
               <div
                 className="w-full rounded-md bg-blue-300"
                 style={{
                   height: `${(chartHeight / topLabel) * month.revenue}px`,
                 }}
               ></div>
-              <p className="-rotate-90 text-sm text-gray-400 sm:rotate-0">
-                {month.month}
-              </p>
+              <p className="-rotate-90 text-sm text-gray-400 sm:rotate-0">{month.month}</p>
             </div>
           ))}
         </div>
